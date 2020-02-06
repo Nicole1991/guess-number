@@ -30,11 +30,11 @@ Given Number: 1 2 3 4
 
 13. Guess Number: 1 2 3    Output: Wrong Input, input again
 
-Guess Wrong answer times <= 6, game continue;
+14. Guess Wrong answer times <= 6, game continue;
 
-Guess Wrong answer times > 6, game over;
+15. Guess Wrong answer times > 6, game over;
 
-Guess Correct, game over and show "You win". 
+16. Guess Number: 1 2 3 4   Output: 4A0B, Guess Correct, game over and show "Congratulations, you win!". 
 
 
 
