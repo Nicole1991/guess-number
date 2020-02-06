@@ -63,4 +63,16 @@ public class GuessNumberGameTest {
         //then
         assertEquals("0A2B", result);
     }
+
+    @Test
+    public void should_return_0A0B_when_guess_number_correct_number_is_1234_and_guess_number_is_6789() {
+        //given
+        GuessNumberGame guessNumberGame = new GuessNumberGame("1234");
+
+        //when
+        String result = guessNumberGame.guess("6789");
+
+        //then
+        assertEquals("0A0B", result);
+    }
 }
