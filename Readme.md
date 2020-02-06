@@ -1,4 +1,4 @@
-## GuessNumber
+## GuessNumberGame
 
 ## Tasking
 
