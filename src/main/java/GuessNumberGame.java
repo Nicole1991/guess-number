@@ -7,9 +7,20 @@ public class GuessNumberGame {
     }
 
     public String guess(String numbers) {
-        if (this.answer.equals(numbers)) {
-            return "4A0B";
+        int positionAndNumberCorrectCount = 0;
+        int onlyNumberCorrectCount = 0;
+        for (char number: numbers.toCharArray()) {
+            String charToString = Character.toString(number);
+            boolean isA = this.answer.contains(charToString) && this.answer.indexOf(number) == numbers.indexOf(number);
+            boolean isB = this.answer.contains(charToString) && this.answer.indexOf(number) != numbers.indexOf(number);
+
+            if (isA) {
+                positionAndNumberCorrectCount++;
+            }
+            if (isB) {
+                onlyNumberCorrectCount++;
+            }
         }
-        return "2A2B";
+        return String.format("%sA%sB", positionAndNumberCorrectCount, onlyNumberCorrectCount);
     }
 }
