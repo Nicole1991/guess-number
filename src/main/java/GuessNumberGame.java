@@ -10,17 +10,21 @@ public class GuessNumberGame {
         int positionAndNumberCorrectCount = 0;
         int onlyNumberCorrectCount = 0;
         for (char number: numbers.toCharArray()) {
-            String charToString = Character.toString(number);
-            boolean isA = this.answer.contains(charToString) && this.answer.indexOf(number) == numbers.indexOf(number);
-            boolean isB = this.answer.contains(charToString) && this.answer.indexOf(number) != numbers.indexOf(number);
-
-            if (isA) {
+            if (guessCharResultIsA(numbers, number)) {
                 positionAndNumberCorrectCount++;
             }
-            if (isB) {
+            if (guessCharResultIsB(numbers, number)) {
                 onlyNumberCorrectCount++;
             }
         }
         return String.format("%sA%sB", positionAndNumberCorrectCount, onlyNumberCorrectCount);
+    }
+
+    private boolean guessCharResultIsB(String numbers, char number) {
+        return this.answer.contains(Character.toString(number)) && this.answer.indexOf(number) != numbers.indexOf(number);
+    }
+
+    private boolean guessCharResultIsA(String numbers, char number) {
+        return this.answer.contains(Character.toString(number)) && this.answer.indexOf(number) == numbers.indexOf(number);
     }
 }
