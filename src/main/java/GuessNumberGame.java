@@ -1,6 +1,6 @@
 public class GuessNumberGame {
 
-    public static final String ANSWER_RESULT_PATTERN = "%sA%sB";
+    private static final String ANSWER_RESULT_PATTERN = "%sA%sB";
     private final String answer;
 
     public GuessNumberGame(String answer) {
@@ -11,21 +11,21 @@ public class GuessNumberGame {
         int positionAndNumberCorrectCount = 0;
         int onlyNumberCorrectCount = 0;
         for (char number: numbers.toCharArray()) {
-            if (guessCharResultIsA(numbers, number)) {
+            if (guessCharResultIsCorrectNumberAndIndex(numbers, number)) {
                 positionAndNumberCorrectCount++;
             }
-            if (guessCharResultIsB(numbers, number)) {
+            if (guessCharResultIsCorrectNumberAndWrongIndex(numbers, number)) {
                 onlyNumberCorrectCount++;
             }
         }
         return String.format(ANSWER_RESULT_PATTERN, positionAndNumberCorrectCount, onlyNumberCorrectCount);
     }
 
-    private boolean guessCharResultIsB(String numbers, char number) {
+    private boolean guessCharResultIsCorrectNumberAndWrongIndex(String numbers, char number) {
         return this.answer.contains(Character.toString(number)) && this.answer.indexOf(number) != numbers.indexOf(number);
     }
 
-    private boolean guessCharResultIsA(String numbers, char number) {
+    private boolean guessCharResultIsCorrectNumberAndIndex(String numbers, char number) {
         return this.answer.contains(Character.toString(number)) && this.answer.indexOf(number) == numbers.indexOf(number);
     }
 }
