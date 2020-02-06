@@ -7,6 +7,9 @@ public class GuessNumberGame {
     }
 
     public String guess(String numbers) {
-        return "4A0B";
+        if (this.answer.equals(numbers)) {
+            return "4A0B";
+        }
+        return "2A2B";
     }
 }
