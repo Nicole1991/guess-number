@@ -1,5 +1,6 @@
 public class GuessNumberGame {
 
+    public static final String ANSWER_RESULT_PATTERN = "%sA%sB";
     private final String answer;
 
     public GuessNumberGame(String answer) {
@@ -17,7 +18,7 @@ public class GuessNumberGame {
                 onlyNumberCorrectCount++;
             }
         }
-        return String.format("%sA%sB", positionAndNumberCorrectCount, onlyNumberCorrectCount);
+        return String.format(ANSWER_RESULT_PATTERN, positionAndNumberCorrectCount, onlyNumberCorrectCount);
     }
 
     private boolean guessCharResultIsB(String numbers, char number) {
