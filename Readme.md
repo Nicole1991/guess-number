@@ -1,6 +1,27 @@
 ## GuessNumberGame
 
-## Tasking
+## Module 拆分
+
+1. xAxB计算 
+2. 随机数
+3. 流程（计算是否猜够6次等）
+4. 校验
+
+
+## Tasking 
+
+1. xAxB计算（一般等价类、正交分解法）
+   
+
+2. 随机数
+   生成4位数；
+   数字的范围是0～9；
+   not duplicated；
+
+Q1：如何生成四位0-9的随机数？
+Q2：如何保证生成的随机数不重复？
+
+## Tasking（Original）
 
 Given Number: 1 2 3 4
 
