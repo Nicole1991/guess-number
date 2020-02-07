@@ -2,15 +2,17 @@ import java.util.Random;
 import java.util.Set;
 import java.util.HashSet;
 
+import static constants.ConstantsFields.*;
+
 public class RandomAnswerGenerator implements AnswerGenerator {
     @Override
     public String generate() {
         Random random = new Random();
         Set<String> randomAnswer = new HashSet<>();
 
-        while (randomAnswer.size() < 4) {
-            randomAnswer.add(String.valueOf(random.nextInt(10)));
+        while (randomAnswer.size() < RANDOM_ANSWER_LENGTH) {
+            randomAnswer.add(String.valueOf(random.nextInt(RANDOM_MAX_INT)));
         }
-        return String.join("", randomAnswer);
+        return String.join(DELIMITER, randomAnswer);
     }
 }

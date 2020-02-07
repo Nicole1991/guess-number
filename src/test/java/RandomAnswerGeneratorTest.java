@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import static constants.ConstantsFields.DELIMITER;
+import static constants.ConstantsFields.RANDOM_ANSWER_LENGTH;
 import static org.junit.Assert.*;
 
 public class RandomAnswerGeneratorTest {
@@ -13,7 +15,7 @@ public class RandomAnswerGeneratorTest {
 
         String answer = randomAnswerGenerator.generate();
 
-        assertEquals(4, answer.length());
+        assertEquals(RANDOM_ANSWER_LENGTH, answer.length());
         for (char number: answer.toCharArray()) {
             assertTrue(Character.isDigit(number));
         }
@@ -25,8 +27,8 @@ public class RandomAnswerGeneratorTest {
 
         String answer = randomAnswerGenerator.generate();
 
-        Set<String> answerToSet = new HashSet<>(Arrays.asList(answer.split("")));
+        Set<String> answerToSet = new HashSet<>(Arrays.asList(answer.split(DELIMITER)));
 
-        assertEquals(4, answerToSet.size());
+        assertEquals(RANDOM_ANSWER_LENGTH, answerToSet.size());
     }
 }
