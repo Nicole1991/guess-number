@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class GuessNumberGame {
 
     private static final String ANSWER_RESULT_PATTERN = "%sA%sB";
@@ -5,6 +8,10 @@ public class GuessNumberGame {
 
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.answer = answerGenerator.generate();
+    }
+
+    public List<GameResult> gameProcess() {
+        return new ArrayList<>();
     }
 
     public String guess(String numbers) {

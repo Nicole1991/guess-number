@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -84,5 +86,17 @@ public class GuessNumberGameTest {
 
         //then
         assertEquals("0A0B", result);
+    }
+
+    @Test
+    public void should_return_you_win_when_guess_number_correct_number_is_1234_and_guess_number_is_1234() {
+        //given
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
+
+        //when
+        List<GameResult> result = guessNumberGame.gameProcess();
+
+        //then
+        assertEquals("Congratulations, you win!", result.get(0).getGuessResult());
     }
 }
