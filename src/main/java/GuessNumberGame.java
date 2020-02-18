@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GuessNumberGame {
@@ -11,7 +11,8 @@ public class GuessNumberGame {
     }
 
     public List<GameResult> gameProcess() {
-        return new ArrayList<>();
+        GameResult gameResult = GameResult.builder().guessResult("Congratulations, you win!").build();
+        return Collections.singletonList(gameResult);
     }
 
     public String guess(String numbers) {
